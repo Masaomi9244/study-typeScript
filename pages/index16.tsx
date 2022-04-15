@@ -27,4 +27,15 @@ export const foo3 = (value?: string) => {
     return; // undefind
   }
   return value; // string
-}
+};
+
+// in演算子を使った型ガード
+type UserA = {name: string};
+type UserB = {name: string; nickName: string};
+
+export const foo4 = (value: UserA | UserB) => {
+  if ("nickName" in value) {
+    return value;
+  }
+  return value;
+};
