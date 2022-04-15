@@ -13,3 +13,18 @@ export const foo = (value: string | number | boolean) => {
   }
   return value; //number
 };
+
+// JSのメソッドや演算子を使った型ガード
+export const foo2 = (value: string | string[]) => {
+  if (Array.isArray(value)) {
+    return value; // string[]
+  }
+  return value; // string
+};
+
+export const foo3 = (value?: string) => {
+  if (!value) {
+    return; // undefind
+  }
+  return value; // string
+}
