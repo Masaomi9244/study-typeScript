@@ -21,7 +21,6 @@ export const foo2 = (value: string | string[]) => {
   }
   return value; // string
 };
-
 export const foo3 = (value?: string) => {
   if (!value) {
     return; // undefind
@@ -32,7 +31,6 @@ export const foo3 = (value?: string) => {
 // in演算子を使った型ガード
 type UserA = {name: string};
 type UserB = {name: string; nickName: string};
-
 export const foo4 = (value: UserA | UserB) => {
   if ("nickName" in value) {
     return value;
@@ -43,7 +41,6 @@ export const foo4 = (value: UserA | UserB) => {
 // タグ付きUnionTypes
 type UserC = {name: string; lang: "ja"};
 type UserD = {name: string; lang: "en"};
-
 export const foo5 = (value: UserC | UserD)  => {
   if (value.lang === "ja") {
     return value; // UserC
