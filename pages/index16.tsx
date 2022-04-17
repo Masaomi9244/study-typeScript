@@ -50,3 +50,25 @@ export const foo5 = (value: UserC | UserD)  => {
   }
   return value; // UserD
 }
+
+// swicthでの型ガード
+type UserE = {name: string; lang: "ja"};
+type UserF = {name: string; lang: "en"};
+type UserG = {name: string; lang: "fr"};
+export const foo6 = (value: UserE | UserF | UserG) => {
+  switch(value.lang) {
+    case "ja": {
+      return value; // UserE
+    }
+    case "en": {
+      return value; // UserF
+    }
+    case "fr": {
+      return value; // UserG
+    }
+    default: {
+      throw Error("lang is not defind");
+      return value; // never
+    }
+  }
+}
