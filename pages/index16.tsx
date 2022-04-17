@@ -39,3 +39,14 @@ export const foo4 = (value: UserA | UserB) => {
   }
   return value;
 };
+
+// タグ付きUnionTypes
+type UserC = {name: string; lang: "ja"};
+type UserD = {name: string; lang: "en"};
+
+export const foo5 = (value: UserC | UserD)  => {
+  if (value.lang === "ja") {
+    return value; // UserC
+  }
+  return value; // UserD
+}
