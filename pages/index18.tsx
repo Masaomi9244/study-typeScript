@@ -30,3 +30,14 @@ const user2: American = {
   name: "johnny",
   state: "NY",
 };
+
+// Genericsの初期値を指定
+type Foo2<T = string> = {
+  value: T;
+};
+const hoge: Foo2 = {
+  value: "hoge",
+};
+const hoge2: Foo2<number> = {
+  value: 1,
+};
