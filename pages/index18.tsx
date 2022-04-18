@@ -41,3 +41,18 @@ const hoge: Foo2 = {
 const hoge2: Foo2<number> = {
   value: 1,
 };
+
+// extendsを使った型の制約
+// Genericsの型引数に制約を加えたいときに使う
+type Foo3<T extends string> = {
+  value: T;
+};
+const hoge3: Foo3<string> = {
+  value: "hoge",
+};
+const hoge4: Foo<"hoge"> = { //制約の型に互換性があれば使える
+  value: "hoge",
+};
+// const hoge5: Foo3<number> = { // stringではないのでエラー
+//   value: 1,
+// };
