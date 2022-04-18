@@ -46,3 +46,20 @@ export const foo3 = async () => {
   }
   return json; // any
 };
+
+// filter関数での型ガード
+type UserG = { name:string; lang: "ja" };
+type UserH = { name:string; lang: "en" };
+const users: (UserG | UserH)[] = [
+  { name: "たなか", lang: "ja" },
+  { name: "やまだ", lang: "ja" },
+  { name: "ジョニー", lang: "en" },
+];
+const isUserH = (user: UserG | UserH): user is UserH => {
+  return user.lang === "en"
+};
+// 普通にfilterを使うと型までは絞り込めていない
+const japanese = users.filter((user) => user.lang === "ja");
+const notJapanese = users.filter(isUserH);
+const hoge = japanese; // (UserG | UserH)[]
+const hoge2 = notJapanese; // userH[]
