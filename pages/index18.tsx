@@ -56,3 +56,14 @@ const hoge4: Foo<"hoge"> = { //制約の型に互換性があれば使える
 // const hoge5: Foo3<number> = { // stringではないのでエラー
 //   value: 1,
 // };
+
+// 初期値とextendsを同時に使う
+export type Foo4<T extends string | number = string> = {
+  value: T;
+};
+const hoge5: Foo4 = {
+  value: "hoge",
+};
+const foo6: Foo4<number> = {
+  value: 1,
+};
