@@ -30,3 +30,19 @@ export const foo2 = (value: any) => {
   }
   return value; // any
 };
+
+// 非同期処理をユーザ定義で型ガード
+// 外部のAPIをたたいた時のレスポンスに片を付けたいときに使う
+type UserE = { name:string; lang: "ja" };
+type UserF = { name:string; lang: "en" };
+const isUserE = (user: UserE | UserF): user is UserE => {
+  return user.lang === "ja"
+};
+export const foo3 = async () => {
+  const res = await fetch("");
+  const json = await res.json();
+  if (isUserE(json)) {
+    return json.lang; // UserE
+  }
+  return json; // any
+};
