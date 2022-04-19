@@ -16,3 +16,12 @@ const foo4 = foo3("");
 const foo5 = foo3(1);
 const foo6 = foo3([false]);
 const foo7 = foo3<string | null>("");
+
+// extendsによる制約について
+// ある程度型を予測するために使う
+function foo8<T extends string | number>(arg: T) {
+  if (typeof arg === "string") {
+    return { value: arg.toUpperCase() }; 
+  };
+  return { value: arg.toString() };
+};
