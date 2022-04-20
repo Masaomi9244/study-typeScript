@@ -67,3 +67,18 @@ const user4: PickdUser = {
   // age: 24, エラーになる
   country: "JP",
 };
+
+// -------------------------------------------------------
+
+// オブジェクトから不要なプロパティを排除して新しいオブジェクトに返す Omit
+type User5 = {
+  name: string;
+  age: number | null;
+  country?: "US" | "UK" | "JP";
+};
+type OmitUser = Omit<User5, "age">;
+const user5: OmitUser = {
+  name: "まさや",
+  // age: 24, エラーになる 
+  country: "JP",
+};
