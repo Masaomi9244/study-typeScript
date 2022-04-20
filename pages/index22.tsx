@@ -53,3 +53,17 @@ const user3: RequiredUser = {
   country: "JP",
 };
 
+// -------------------------------------------------------
+
+// オブジェクトから必要なプロパティを選んで新しいオブジェクト型を返す
+type User4 = {
+  name: string;
+  age: number | null;
+  country?: "US" | "UK" | "JP";
+};
+type PickdUser = Pick<User4, "name" | "country">;
+const user4: PickdUser = {
+  name: "まさや",
+  // age: 24, エラーになる
+  country: "JP",
+};
