@@ -32,8 +32,24 @@ type User2 = {
   age: number | null;
   country?: "US" | "UK" | "JP";
 };
-type PartialUser = Partial<User>;
+type PartialUser = Partial<User2>;
 const use2: PartialUser = {
   name: "まさや",
   // age: 24,
 };
+
+// -------------------------------------------------------
+
+// 各プロパティを必須にする　Required
+type User3 = {
+  name: string;
+  age: number | null;
+  country?: "US" | "UK" | "JP";
+};
+type RequiredUser = Required<User3>;
+const user3: RequiredUser = {
+  name: "まさや",
+  age: 24,
+  country: "JP",
+};
+
