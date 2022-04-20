@@ -24,7 +24,16 @@ const user: ReadonlyUser = {
 };
 // user.age = 30; エラー
 
+// -------------------------------------------------------
 
-
-
-
+// 各プロパティをオプショナルにする Partial
+type User2 = {
+  name: string;
+  age: number | null;
+  country?: "US" | "UK" | "JP";
+};
+type PartialUser = Partial<User>;
+const use2: PartialUser = {
+  name: "まさや",
+  // age: 24,
+};
