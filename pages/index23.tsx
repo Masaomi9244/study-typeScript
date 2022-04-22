@@ -10,3 +10,8 @@ type Foo4 = Extract<"hoge" | number, boolean>; //never
 
 // 第一型引数と第二型引数から互換性のない型だけを残して新しい型を生成するもの Exclude
 type Foo5 = Exclude<"aa" |string | number | boolean, string>; // number | boolean
+
+// ---------------------------------------------------------------------------------
+
+// 型引数で指定した型からnullとundefinedを除いたもの NonNullable
+type Foo6 = NonNullable<string | null | undefined>; //string
