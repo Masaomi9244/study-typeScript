@@ -15,3 +15,12 @@ type Foo5 = Exclude<"aa" |string | number | boolean, string>; // number | boolea
 
 // 型引数で指定した型からnullとundefinedを除いたもの NonNullable
 type Foo6 = NonNullable<string | null | undefined>; //string
+
+// ---------------------------------------------------------------------------------
+
+// オブジェクトのキーとプロパティの型を指定できる Record
+type Foo7 = Record<string, number>;
+const obj: Foo7 =  {
+  hoge: 1,
+  // huga: "2", エラーになる
+};
