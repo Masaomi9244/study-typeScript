@@ -24,3 +24,12 @@ const obj: Foo7 =  {
   hoge: 1,
   // huga: "2", エラーになる
 };
+
+// ---------------------------------------------------------------------------------
+
+// 関数の引数の型をTupleとして取得する Parameters
+// Tuple型　→　一つ一つの要素に対して型をつけることができ、かつ要素の数が決まっている配列
+function hoge(a: string, b: number[], c: boolean) {
+  return;
+};
+type Foo8 = Parameters<typeof hoge>; // [a: string, b: number[], c: boolean]
