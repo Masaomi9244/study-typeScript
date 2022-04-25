@@ -33,3 +33,11 @@ function hoge(a: string, b: number[], c: boolean) {
   return;
 };
 type Foo8 = Parameters<typeof hoge>; // [a: string, b: number[], c: boolean]
+
+// ---------------------------------------------------------------------------------
+
+// 文字列を操作するUtilityTypes
+type Foo9  = Uppercase<"hello">;    // "HELLO"
+type Foo10 = Lowercase<"HELLO">;    // "hello"
+type Foo11 = Capitalize<"hello">;   // "Hello"
+type Foo12 = Uncapitalize<"Hello">; // "hello"
