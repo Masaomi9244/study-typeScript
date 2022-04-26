@@ -7,7 +7,7 @@ const Home: NextPage = () => {
       type="retweet"
       retweetedUser="優香"
       user={{
-        name: "まさおみ",
+        name: "小太郎",
         accountName: "masaomi_study",
         image:
           "https://doodleipsum.com/200x200/avatar-5?bg=6392D9&i=0f33dd99912f70859db2eeaf52dd71f4",
