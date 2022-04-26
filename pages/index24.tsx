@@ -15,3 +15,21 @@ namespace MyNamespace {
 };
 const foo = MyNamespace.name;
 type Foo = MyNamespace.User;
+
+// --------------------------------------------------------
+
+// namespaceのマージ
+namespace MyNamespace2 {
+  export interface User {
+    name: string;
+  };
+};
+namespace MyNamespace2 {
+  export interface User {
+    age: number;
+  };
+};
+type Foo2 = MyNamespace2.User["name"];
+type Foo3 = MyNamespace2.User["age"];
+const foo2: Foo2 = "名前";
+const foo3: Foo3 = 24;
