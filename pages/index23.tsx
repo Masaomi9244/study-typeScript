@@ -41,3 +41,23 @@ type Foo9  = Uppercase<"hello">;    // "HELLO"
 type Foo10 = Lowercase<"HELLO">;    // "hello"
 type Foo11 = Capitalize<"hello">;   // "Hello"
 type Foo12 = Uncapitalize<"Hello">; // "hello"
+
+// ---------------------------------------------------------------------------------
+
+// 外部パッケージのUtilityTypes（type-fest）
+// yarn add type-fest　でインストールできる
+// ネストしている型もオプショナルにできる PartialDeep
+import { PartialDeep } from "type-fest";
+type User = {
+  name: string;
+  age: number | null;
+  address: {
+    country: "US" | "UK" | "JP";
+  };
+};
+type PartialUser = PartialDeep<User>;
+const user: PartialUser = {
+  name: "名前",
+  age: 24,
+  address: {} // countryを指定しなくてもエラーにならない
+};
