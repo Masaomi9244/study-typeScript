@@ -33,3 +33,11 @@ type Foo2 = MyNamespace2.User["name"];
 type Foo3 = MyNamespace2.User["age"];
 const foo2: Foo2 = "名前";
 const foo3: Foo3 = 24;
+
+// --------------------------------------------------------
+
+// アンビエント宣言(declare)
+// TypeScriptに対して型の情報だけを伝えるので基本的に実装には含めてはならない
+// この例は基本的に使ってはいけない！
+declare var x: number;
+x = 0;
