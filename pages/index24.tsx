@@ -41,3 +41,15 @@ const foo3: Foo3 = 24;
 // この例は基本的に使ってはいけない！
 declare var x: number;
 x = 0;
+
+// --------------------------------------------------------
+
+// アンビエントコンテキスト
+// アンビエント宣言(declare)されたnamespace内のこと
+// exportの挙動が変わる
+declare namespace MyNamespace3 {
+  interface User {
+    name: string;
+  }
+};
+type foo4 = MyNamespace3.User; // exportがなくてもエラーにならない
