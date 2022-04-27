@@ -46,7 +46,7 @@ x = 0;
 
 // アンビエントコンテキスト
 // アンビエント宣言(declare)されたnamespace内のこと
-// exportの挙動が変わる
+// exportの挙動が変わる(自動的にexportが付与される)
 declare namespace MyNamespace3 {
   interface User {
     name: string;
