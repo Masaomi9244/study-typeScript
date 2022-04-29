@@ -1,5 +1,6 @@
-import type { NextPage } from 'next';
-// オブジェクトには２種類ある
+// 【TypeScript入門#7】
+
+// オブジェクトには2種類ある
 // プリミティブ型(Any,string, boolean, number, void, never, undefind)以外のオブジェクト
 // 辞書型としてのオブジェクト {}のこと
 
