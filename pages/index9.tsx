@@ -1,36 +1,49 @@
-import type { NextPage } from 'next';
-// 【TypeScript入門 #9】InterfaceとTypeAilas
+//【TypeScript入門 #9】
+// InterfaceとTypeAilas
 
 // Typeailas
 // どんな型でも宣言できる
-//　同じ名前で宣言があったときに自動的にマージされない
+// 同じ名前で宣言があったときに自動的にマージされない
 // プリミティブ型のプロパティをオーバーライドするとnever型になる
 // MappedTypes（ほかの型をもとに新しい型を作るための方法）が使える
-type TypeAliasFoo = {
+namespace Namespace1 {
+  type Foo = {
     a: number;
-};
-const tFoo: TypeAliasFoo = {
+  }
+
+  const foo: Foo = {
     a: 1,
-};
+  }
+}
 
 // interfaceの継承と同じ役割をさせたい場合はIntersectionTypesを使う
-type TypeAliasFoo2 = TypeAliasFoo & {
+namespace Namespace2 {
+  type Foo = {
+    a: number;
+  }
+
+  type Bar = Foo & {
     b: 2,
-};
-const  tFoo2: TypeAliasFoo2 = {
+  }
+
+  const baz: Bar = {
     a: 1,
     b: 2,
-} ;
+  }
+}
 
 // MappedTypes（ほかの型をもとに新しい型を作るための方法）
-type Animals = "dog" | "cat";
-type AnimalsFoo = {
+namespace Namespace3 {
+  type Animals = "dog" | "cat";
+  type AnimalsFoo = {
     [key in Animals]: number;
-};
-const afoo: AnimalsFoo = {
+  }
+
+  const foo: AnimalsFoo = {
     dog: 1,
     cat: 2,
-};
+  }
+}
 
 //-------------------------------------------------------------------------------
 
@@ -39,26 +52,30 @@ const afoo: AnimalsFoo = {
 // 同じ名前で宣言があったときに自動的にマージされる (open-endedに準拠しているともいう)
 // プリミティブ型のプロパティをオーバーライドするとエラーになる
 // MappedTypes（ほかの型をもとに新しい型を作るための方法）が使えない
-interface InterfaceFoo {
+namespace Namespace4 {
+  interface Foo {
     a: number,
-};
-interface InterfaceFoo {
+  }
+  
+  interface Foo {
     b: number,
-};
-const iFoo: InterfaceFoo = {
+  }
+  
+  const foo: Foo = {
     a: 1,
     b: 2,
-};
+  }
 
-// interfaceの継承
-interface InterfaceFoo2 extends InterfaceFoo {
+  // interfaceの継承
+  interface Bar extends Foo {
     c: number,
-};
-const iFoo2:InterfaceFoo2 = {
+  };
+  const bar: Bar = {
     a: 1,
     b: 2,
     c: 3,
-};
+  };
+}
 
 //-------------------------------------------------------------------------------
 
