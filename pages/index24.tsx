@@ -1,5 +1,6 @@
-// 【TypeScript入門 #24】型が無い、もしくは型が不十分な場合に使える拡張の技術（アンビエント宣言・namespace）
-
+// 【TypeScript入門 #24】
+// アンビエント宣言(declare)・namespace
+// 型が無い、もしくは型が不十分な場合に使える拡張の技術
 // 型がないものや型が不十分なものに型を付けたり拡張したりする時に必要
 
 // namespace 
@@ -53,3 +54,10 @@ declare namespace MyNamespace3 {
   }
 };
 type foo4 = MyNamespace3.User; // exportがなくてもエラーにならない
+
+// --------------------------------------------------------
+
+// 環境変数の型を拡張
+// global24.d.tsでFOOを定義してる
+process.env.FOO;
+process.env.BAR;
