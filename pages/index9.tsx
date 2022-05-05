@@ -1,7 +1,7 @@
 //【TypeScript入門 #9】
-// InterfaceとTypeAilas
+// InterfaceとTypeAlias
 
-// Typeailas
+// TypeAlias
 // どんな型でも宣言できる
 // 同じ名前で宣言があったときに自動的にマージされない
 // プリミティブ型のプロパティをオーバーライドするとnever型になる

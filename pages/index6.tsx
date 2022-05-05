@@ -2,9 +2,9 @@
 
 // 配列
 namespace Namespace1 {
-  export const foo: number[] = [1, 2, 3]; // ５行目と同じだがこっちのほうが使用される
-  export const bar: Array<number> = [1, 2,3];
-  export const baz: (number | string)[] = [1, "2", 3]; // 配列に2種類の型を入れたいとき
+  const foo: number[] = [1, 2, 3]; // ５行目と同じだがこっちのほうが使用される
+  const bar: Array<number> = [1, 2,3];
+  const baz: (number | string)[] = [1, "2", 3]; // 配列に2種類の型を入れたいとき
 }
 
 // ----------------------------------------------------------------------------
@@ -37,7 +37,7 @@ namespace Namespace4 {
   const bar: any = "hoge";
 
   // foo.toFixed;      エラーになる 
-  // bar.toFixed;　    エラーにならない
+  // bar.toFixed;      エラーにならない
   // foo.substring(2); エラーになる
   // bar.substring(2); エラーにならない
 
@@ -50,7 +50,7 @@ namespace Namespace4 {
 // ----------------------------------------------------------------------------
 
 // void
-//　関数の返り値が何もないときに使われる
+// 関数の返り値が何もないときに使われる
 function foo8(): void {
   alert("hello");
   // return エラーにならない
