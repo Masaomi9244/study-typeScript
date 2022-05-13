@@ -15,13 +15,15 @@ namespace Namespace1 {
 
 // 暗黙的な型解決について
 // 引数にnullが入る可能性があるなら型を明示的に書く
-function foo3<T>(arg: T) {
-  return { value: arg} ;
-};
-const foo4 = foo3("");
-const foo5 = foo3(1);
-const foo6 = foo3([false]);
-const foo7 = foo3<string | null>("");
+namespace Namespace2 {
+  function foo<T>(arg: T) {
+    return { value: arg} ;
+  };
+  const foo2 = foo("");
+  const foo3 = foo(1);
+  const foo4 = foo([false]);
+  const foo5 = foo<string | null>("");
+}
 
 // extendsによる制約について
 // ある程度型を予測するために使う
