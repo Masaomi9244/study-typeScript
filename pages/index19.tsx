@@ -27,11 +27,13 @@ namespace Namespace2 {
 
 // extendsによる制約について
 // ある程度型を予測するために使う
-function foo8<T extends string | number>(arg: T) {
-  if (typeof arg === "string") {
-    return { value: arg.toUpperCase() };
-  };
-  return { value: arg.toString() };
-};
+namespace Namespace3 {
+  function foo<T extends string | number>(arg: T) {
+    if (typeof arg === "string") {
+      return { value: arg.toUpperCase() };
+    }
+    return { value: arg.toString() };
+  }
+}
 
 export {}
